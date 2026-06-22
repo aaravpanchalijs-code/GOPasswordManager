@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault | Signup</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blob blob1"></div>
+
+    <div class="blob blob2"></div>
+
+    <div class="blob blob3"></div>
+
+</div>
+
+<div class="auth-container">
+
+    <div class="hero-section">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+        </div>
+
+        <h1>Create Account</h1>
+
+        <h2>
+
+            Your own encrypted password vault.
+
+        </h2>
+
+        <p>
+
+            Create an account to securely store,
+            manage and share passwords.
+
+        </p>
+
+        <div class="features">
+
+            <div>
+
+                <i class="fa-solid fa-lock"></i>
+
+                End-to-End Encryption
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                Secure Authentication
+
+            </div>
+
+            <div>
+
+                <i class="fa-solid fa-cloud"></i>
+
+                Cloud Storage
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="login-card">
+
+        <h2>Create Account</h2>
+
+        <p>
+
+            Join SecureVault today.
+
+        </p>
+
+        <form id="signupForm">
+
+            <div class="input-group">
+
+                <label>Username</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Username"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Password"
+                        required>
+
+                    <i
+                        id="togglePassword"
+                        class="fa-solid fa-eye toggle-password">
+
+                    </i>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <div class="divider">
+
+            <span>or</span>
+
+        </div>
+
+        <div class="signup-link">
+
+            Already have an account?
+
+            <a href="login.html">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast"
+     class="toast">
+
+</div>
+
+<script src="js/signup.js"></script>
+
+</body>
+
+</html>

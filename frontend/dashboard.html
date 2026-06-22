@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SecureVault | Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blob blob1"></div>
+
+    <div class="blob blob2"></div>
+
+    <div class="blob blob3"></div>
+
+</div>
+
+<div class="dashboard">
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+        <div>
+
+            <h1>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                SecureVault
+
+            </h1>
+
+            <p style="color:#94A3B8">
+
+                Manage your passwords securely
+
+            </p>
+
+        </div>
+
+        <button
+            id="logoutBtn"
+            class="logout">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </div>
+
+    <!-- Add Password Card -->
+
+    <div class="form-card">
+
+        <h2>
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add New Password
+
+        </h2>
+
+        <br>
+
+        <form id="addPasswordForm">
+
+            <div class="input-group">
+
+                <label>Website</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    <input
+                        id="website"
+                        type="text"
+                        placeholder="github.com"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Login Email</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        id="loginEmail"
+                        type="email"
+                        placeholder="example@gmail.com"
+                        required>
+
+                </div>
+
+            </div>
+
+          <div class="input-box">
+
+    <i class="fa-solid fa-key"></i>
+
+    <input
+        id="password"
+        type="text"
+        placeholder="Password"
+        required>
+
+</div>
+
+<button
+    type="button"
+    id="generateBtn"
+    class="generate-btn">
+
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+    Generate Strong Password
+
+</button>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Notes</label>
+
+                <textarea
+                    id="notes"
+                    rows="3"
+                    placeholder="Optional">
+
+                </textarea>
+
+            </div>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Password
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Password List -->
+
+   <!-- Dashboard Statistics -->
+
+<div class="stats-container">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-key"></i>
+
+        <h2 id="passwordCount">0</h2>
+
+        <p>Passwords</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-share-nodes"></i>
+
+        <h2 id="sharedCount">0</h2>
+
+        <p>Shared</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>AES</h2>
+
+        <p>Encrypted</p>
+
+    </div>
+
+</div>
+
+<!-- Search -->
+
+<div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search websites...">
+
+</div>
+
+<!-- Password List -->
+
+<div class="section-title">
+
+    <i class="fa-solid fa-lock"></i>
+
+    <h2>Stored Passwords</h2>
+
+</div>
+
+<div
+    id="passwordGrid"
+    class="password-grid">
+
+</div>
+
+<!-- ======================== -->
+
+<!-- EDIT MODAL -->
+
+<!-- ======================== -->
+<div class="modal" id="editModal">
+
+    <div class="modal-content">
+
+        <h2>
+
+            <i class="fa-solid fa-pen-to-square"></i>
+
+            Edit Password
+
+        </h2>
+
+        <div class="input-group">
+
+            <label>Website</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <input
+                    id="editWebsite"
+                    type="text">
+
+            </div>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Login Email</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    id="editEmail"
+                    type="email">
+
+            </div>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Password</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-key"></i>
+
+                <input
+                    id="editPassword"
+                    type="text">
+
+            </div>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Notes</label>
+
+            <textarea
+                id="editNotes"
+                rows="4">
+
+            </textarea>
+
+        </div>
+
+        <button id="updateBtn">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Update Password
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ======================== -->
+
+<!-- SHARE MODAL -->
+
+<!-- ======================== -->
+
+<div
+    class="modal"
+    id="shareModal">
+
+    <div class="modal-content">
+
+        <h2>Share Password</h2>
+
+        <br>
+
+        <input
+            id="shareUsername"
+            placeholder="Recipient Username">
+
+        <br><br>
+
+        <button
+            id="shareBtn">
+
+            Share
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    id="toast"
+    class="toast">
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
